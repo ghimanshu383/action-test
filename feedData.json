@@ -1,0 +1,13 @@
+{
+    "merchant_id": "asdf",
+    "unique_id": "123",
+    "mobile_no": "9962304548",
+    "email": "g.himanshu383@gmail.com",
+    "feeDetails": {
+        "feeContent": {
+            "tution_fee": 300,
+            "bus_fee": 200
+        },
+        "dueDate_without_penalty": "2022-08-31"
+    }
+}
