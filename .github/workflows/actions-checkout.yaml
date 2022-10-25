@@ -1,0 +1,14 @@
+name: actions-checkout
+
+on: [push]
+
+jobs:
+  actions-checkout-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: cloning repo in virtual machine
+        uses: actions/checkout@v1
+      - name: get working directory files
+        run: |
+          pwd
+          ls
