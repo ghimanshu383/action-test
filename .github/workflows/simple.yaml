@@ -14,9 +14,13 @@ jobs:
           npm -v
   run-python-command:
     runs-on: ubuntu-18.04
+    needs: ["run-shell-commands"]
     steps:
       - name: print in python
-        run: print("Hello world in python shell")
+        run: |
+          import platform;
+          print(platform.processor())
+          print("Hello world in python shell")
         shell: python
 
 

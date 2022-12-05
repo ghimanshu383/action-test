@@ -1,0 +1,16 @@
+name: running-github-actions
+
+on: [push]
+
+jobs:
+  simple-javacript-action:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Hello-world-action
+        id: greeting
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: Himanshu
+        # below step is used to log the outputs of the action provided the same can be found in the documentation of the actions
+      - name: log greet time
+        run: echo "${{steps.greeting.outputs.time}}"
