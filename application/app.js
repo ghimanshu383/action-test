@@ -5,11 +5,18 @@ const feeRouter = require('../routes/userRoutes');
 const AppErrors = require('./appError');
 const cookieParser = require('cookie-parser');
 const app = express();
+const Path = require('path');
 
 app.use(express.json());
 app.use(morgan('dev'));
-app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
+app.use(cors({credentials: true, origin: 'http://localhost:8080/'}));
+app.use(express.static(Path.join(`${__dirname}`, 'views')));
 app.use(cookieParser());
+app.set('view engine', 'html');
+// app.set('views', `${__dirname}/public/views`);
+app.set('views', Path.join(`${__dirname}`, 'views'));
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
 
 app.use('/v1/govindPay/', feeRouter);
 
@@ -26,5 +33,4 @@ app.use((error, request, response, next)=>{
     stack: error.stack,
   });
 });
-
 module.exports = app;
