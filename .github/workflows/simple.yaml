@@ -12,5 +12,11 @@ jobs:
         run: |
           node -v
           npm -v
+  run-python-command:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: print in python
+        run: print("Hello world in python shell")
+        shell: python
 
 
