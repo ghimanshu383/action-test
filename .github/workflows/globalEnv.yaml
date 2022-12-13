@@ -1,0 +1,14 @@
+name: using global environments
+
+on: [push]
+
+jobs:
+  initializingRepo:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: initializing_repository
+        run: |
+          pwd
+          ls -a
+          git init
+          git remote add origin "https://${GITHUB_ACTOR}:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
