@@ -3,7 +3,7 @@ name: environment variables
 on: 
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   logginEnvironmentVariables:
