@@ -1,0 +1,19 @@
+name: environment variables
+
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  logginEnvironmentVariables:
+    runs-on: ubuntu-18.04
+    env:
+      jobEnv: This the job specific environment variable
+    steps:
+      - name: "Logging the environment variables"
+        env:
+          stepEnv: "This is the step environment variable"
+        run: |
+          echo "${jobEnv}"
+          echo "${stepEnv}"
