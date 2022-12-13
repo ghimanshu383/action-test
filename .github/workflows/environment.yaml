@@ -5,6 +5,9 @@ on:
     branches:
       - develop
 
+env:
+  global_env: ${{secrets.Global_env}}
+
 jobs:
   logginEnvironmentVariables:
     runs-on: ubuntu-18.04
@@ -17,3 +20,4 @@ jobs:
         run: |
           echo "${jobEnv}"
           echo "${stepEnv}"
+          echo "${global_env}"
