@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+      - 'feature/*'
+      - 'feature/**'
       #This will only if the branch we are working on is the master branch the same can be done for the pull request as well
   pull_request:
     types:
