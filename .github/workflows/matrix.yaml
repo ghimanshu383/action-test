@@ -15,6 +15,5 @@ jobs:
     - name: log changed node version
       run: |
         node --version
-        echo ${{toJson(steps.node_version)}}
    
    
