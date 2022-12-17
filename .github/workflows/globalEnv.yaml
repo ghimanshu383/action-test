@@ -22,6 +22,7 @@ jobs:
           ls -l
   logginEnvVariables:
     runs-on: ubuntu-18.04
+    if: github.envet_name === 'push'
     steps:
       - name: loggin Git-hub context
         env:
@@ -29,3 +30,9 @@ jobs:
         run: |
           echo $github_context
           echo ${{github.event_name}}
+      - name: running after failed step
+        if: failure()
+        run: echo "The preveious step failed"
+      - name: running a job always 
+        if: always()
+        run: echo "This job will always run"
