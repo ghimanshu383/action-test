@@ -5,13 +5,18 @@ on: [push]
 jobs:
   understanding-matrix:
    runs-on: ubuntu-18.04
+   strategy:
+     matrix:
+      node_version: [6, 10, 16]
+     fail-fast: true
+     max-parallel: 2
    steps:
     - name: log node version`
       run: node --version
       id: node_version
     - uses: actions/setup-node@v1
       with:
-        node_version: 16
+        node-version: ${{matrix.node_version}}
     - name: log changed node version
       run: |
         node --version
