@@ -28,4 +28,4 @@ jobs:
           github_context: ${{toJson(github)}}
         run: |
           echo $github_context
-          echo github.envet_name
+          echo $github_context.envent_name
