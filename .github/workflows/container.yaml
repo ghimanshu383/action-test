@@ -1,0 +1,12 @@
+name: running docker containers
+
+on: [push]
+
+jobs:
+  node_container:
+    runs-on: ubuntu-18.04 
+    container:
+      image: node
+    steps:
+      - name: running node container
+        run: node -v

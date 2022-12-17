@@ -4,12 +4,17 @@ on: [push]
 
 jobs:
   understanding-matrix:
-   runs-on: ubuntu-18.04
    strategy:
      matrix:
       node_version: [6, 10, 16]
+      os: [macos-latest, ubuntu-latest, windows-latest]
+      exclude:
+        - os: macos-latest
+          node_version: 6
      fail-fast: true
      max-parallel: 2
+     # we can use the matrix.os to run on the different operatins sytems and the job will be running nine times
+   runs-on: ubuntu-18.04
    steps:
     - name: log node version`
       run: node --version
