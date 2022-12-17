@@ -15,8 +15,8 @@ jobs:
   cloingRepo: 
     runs-on: ubuntu-18.04
     steps:
+      - uses: actions/checkout@v1
       - name: cloning 
-        uses: actions/checkout@v1
         run: |
           pwd
           ls -l
