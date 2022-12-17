@@ -26,4 +26,6 @@ jobs:
       - name: loggin Git-hub context
         env:
           github_context: ${{toJson(github)}}
-        run: echo $github_context
+        run: |
+          echo $github_context
+          echo github.envet_name
