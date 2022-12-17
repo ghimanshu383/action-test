@@ -1,0 +1,20 @@
+name: Matrix
+
+on: [push]
+
+jobs:
+  understanding-matrix:
+   runs-on: ubuntu-18.04
+   steps:
+    - name: log node version`
+      run: node --version
+      id: node_version
+    - uses: actions/setup-node@v1
+      with:
+        node_version: 16
+    - name: log changed node version
+      run: |
+        node --version
+        echo ${{toJson(steps.node_version)}}
+   
+   
